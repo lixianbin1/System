@@ -1,0 +1,20 @@
+login:
+  Welcome: 欢迎来到信用参考平台访问门户，CRP
+  FontTitle: Copyright©2018XXXXXXXX,All Rights Reserved  京ICP备160XXX914号-12 京公网安备1101XXXXX22625
+  Account: 帐户登录
+  EnterMember: 请输入会员号码
+  EnterAccount: 请输入帐户
+  EnterPassword: 请输入密码
+  Login: 登录
+  Change: 修改密码
+  OldPassword: 请输入旧密码
+  NewPassword: 请输入新密码
+  confirm: 请确认新密码
+  Submit: 提交
+  Goback: 返回
+menu:
+  menu1: 菜单一
+  menu1-1: 菜单11
+  menu1-2: 菜单12
+  menu2: 菜单二
+  menu3: 菜单三

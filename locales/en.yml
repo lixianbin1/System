@@ -1,0 +1,20 @@
+login:
+  Welcome: Welcome to Credit Reference Platform Access Portal, CRP
+  FontTitle: Copyright © 2018XXXXXXXX, All Rights Reserved Beijing ICP No. 160XX914 - 12 Beijing Public Security 1101XXXXX22625
+  Account: Account login
+  EnterMember: Please enter member code
+  EnterAccount: Please enter user ID
+  EnterPassword: Please enter an password
+  Login: Login
+  Change: Change Password
+  OldPassword: Please enter old password
+  NewPassword: Please enter new password
+  confirm: Please enter confirm password
+  Submit: Submit
+  Goback: Go Back
+menu:
+  menu1: menu1
+  menu1-1: menu1-1
+  menu1-2: menu1-2
+  menu2: menu2
+  menu3: menu3

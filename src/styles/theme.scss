@@ -1,0 +1,20 @@
+$mainColor: #fff;
+$menuFont: 24px;
+.el-aside{
+    transition: width 0.25s;
+    -webkit-transition: width 0.25s;
+    -moz-transition: width 0.25s;
+    -webkit-transition: width 0.25s;
+    -o-transition: width 0.25s;
+    .v-menu{
+        color: $mainColor;
+        font-size: $menuFont;
+        height: 56px;
+        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        .el-icon{
+            cursor: pointer;
+        }
+    }
+}
