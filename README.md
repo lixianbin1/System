@@ -34,7 +34,8 @@
 |—— vite.config.ts
 ```
 
-```js vite.config.js
+```js
+// vite.config.js
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 export default defineConfig({
@@ -82,7 +83,8 @@ export default defineConfig({
     |—— i18n.ts     //vue-i18的相关配置
 ```
 
-```js vite.config.js
+```js 
+// vite.config.js
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 export default defineConfig({
@@ -104,7 +106,8 @@ export default defineConfig({
 })
 ```
 
-```js src/modules/i18n.ts
+```js 
+// src/modules/i18n.ts
 import { createI18n } from 'vue-i18n'
 import { type UserModule } from '~/types'
 
@@ -130,7 +133,8 @@ export const install: UserModule = ( app ) => {
 export default install
 ```
 
-```js main.js
+```js 
+// main.js
 import i18 from '@/modules/i18n.ts'
 
 createApp(App).use(i18)
@@ -149,7 +153,8 @@ createApp(App).use(i18)
     |—— index.vue
 ```
 
-```js vite.config.js
+```js 
+// vite.config.js
 import Layouts from 'vite-plugin-vue-layouts'
 import Pages from 'vite-plugin-pages'
 export default defineConfig({
@@ -175,7 +180,8 @@ export default defineConfig({
 })
 ```
 
-```js main.js
+```js 
+// main.js
 import { createRouter,createWebHistory } from 'vue-router'
 import { setupLayouts } from 'virtual:generated-layouts'
 import generatedRoutes from '~pages'
@@ -197,7 +203,8 @@ createApp(App).use(router)
 |—— uno.config.ts       //unocss的配置
 ```
 
-```js vite.config.js
+```js 
+// vite.config.js
 import Unocss from 'unocss/vite'
 export default defineConfig({
   plugins: [
@@ -207,7 +214,8 @@ export default defineConfig({
 })
 ```
 
-```ts uno.config.ts
+```ts 
+// uno.config.ts
 import { 
   defineConfig,
   presetUno, //默认预设
@@ -227,7 +235,8 @@ export default defineConfig({
 })
 ```
 
-```js main.js
+```js 
+// main.js
 import 'virtual:uno.css'
 ```
 
