@@ -7,12 +7,6 @@
       <el-container>
         <Menu />
         <el-main>
-          <!-- vue3.0配置 Component是固定写法 -->
-          <!-- <router-view v-slot="{ Component }">
-            <keep-alive>
-              <component :is="Component" />
-            </keep-alive>
-          </router-view> -->
           <RouterView />
         </el-main>
       </el-container>

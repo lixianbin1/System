@@ -1,21 +1,10 @@
 <script setup lang="ts">
-const route = useRoute()
 const router = useRouter()
-const state = reactive({
-  path:route.fullPath.split("/")[1],
-  info:{}
-})
+// 退出
 const signOut=()=>{
-  localStorage.removeItem('token');
-  localStorage.removeItem('userInformation');
   router.push(`/login`)
 
 }
-
-onMounted(()=>{
-
-})
-const userInformation = reactive(JSON.parse(localStorage.getItem('userInformation')))
 </script>
 
 <template>
@@ -26,20 +15,11 @@ const userInformation = reactive(JSON.parse(localStorage.getItem('userInformatio
     <h1 class="title">Credit Reference Platform Access Portal,CRP</h1>
   </div>
   <div style="flex:1" class="user">
-    <span class="title">{{ userInformation?.username?'Welcome, ' + userInformation.username:'Not logged in' }}</span>
-    <el-button
-      class="userinfo"
-      link
-      >
-        <el-icon i-carbon:user-avatar-filled/>
+    <el-button class="userinfo" link >
+      <i-carbon:user-avatar-filled/>
     </el-button>
-    <el-button
-      class="signout"
-      type="danger"
-      link
-      @click="signOut"
-      >
-        <el-icon i-carbon:logout/>
+    <el-button class="signout" type="danger" link @click="signOut" >
+      <i-carbon:logout/>
     </el-button>
     <LanguageButton />
   </div>

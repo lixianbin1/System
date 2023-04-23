@@ -4,10 +4,11 @@ import vue from '@vitejs/plugin-vue'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
-import Layouts from 'vite-plugin-vue-layouts';
+import Layouts from 'vite-plugin-vue-layouts'
 import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Pages from 'vite-plugin-pages'
 import Icons from 'unplugin-icons/vite'
+import Unocss from 'unocss/vite'
 
 import IconsResolver from 'unplugin-icons/resolver'
 
@@ -28,6 +29,7 @@ export default defineConfig({
     vue(),
     Layouts(),
     Icons(),
+    Unocss(),
     AutoImport({
       imports: [ //自动导入模块
         'vue',
@@ -73,7 +75,6 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         // 引入 mixin.scss 这样就可以在全局中使用 mixin.scss中预定义的变量了
-        // 给导入的路径最后加上 ;
         additionalData: '@import "./src/styles/mixin.scss";', // src/styles/mixin.scss
       },
     },
