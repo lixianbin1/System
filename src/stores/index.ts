@@ -1,11 +1,8 @@
-export const useResizeStore = defineStore('resize', {
-    state:()=>({
-        onResize:false,
-        newWidth:window.innerWidth,
-        oldWidth:window.innerWidth,
-        type:"expand",// expand扩大 reduce缩小
-    }),
-    actions:{
+import { useGlobalState } from './resize.ts'
 
-    }
+export default defineComponent({
+  setup() {
+    const state = useGlobalState()
+    return { state }
+  },
 })

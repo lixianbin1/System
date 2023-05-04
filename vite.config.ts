@@ -9,7 +9,6 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 import Pages from 'vite-plugin-pages'
 import Icons from 'unplugin-icons/vite'
 import Unocss from 'unocss/vite'
-
 import IconsResolver from 'unplugin-icons/resolver'
 
 // https://vitejs.dev/config/
@@ -35,6 +34,8 @@ export default defineConfig({
         'vue',
         'vue-router',
         'vue-i18n',
+        '@vueuse/core',
+        '@vueuse/head',
       ],
       dts: 'src/auto-imports.d.ts', //自动导入的文件集成
       dirs: [ // 自动导入目录下的模块并导出

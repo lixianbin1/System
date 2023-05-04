@@ -35,12 +35,12 @@ watch(() => router.currentRoute.value, (e) => {
 const daa=reactive({
   list:[
     {
-      index:"/Menu1",
+      index:"/VueUse",
       icon:"carbon:align-box-top-left",
       title:t('menu.menu1'),
       children:[
         {
-          index:"/Menu1/01",
+          index:"/VueUse",
           title:t('menu.menu1-1'),
         },
         {

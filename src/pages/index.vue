@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import * as echarts from 'echarts';
+import { useGlobalState } from '@/stores/resize.ts'
 const { t } = useI18n()
 
-const oneChart=shallowRef({})
+const oneChart=shallowRef()
 //重置窗口大小
 const Twidth=ref(window.innerWidth)
 window.onresize=()=>{
@@ -16,9 +17,13 @@ watch(Twidth,(news,olds)=>{
 const reSize=()=>{
 
 }
+
+const state=useGlobalState()
+
 onMounted(() => {
   initChart()
   EchartOne()
+  console.log(state)
 })
 
 const initChart=()=>{
@@ -61,58 +66,57 @@ const EchartOne=()=>{
   oneChart.value.clear()
   oneChart.value.setOption(oneOption);
 }
+const stateClick=()=>{
+  console.log(state.value.name)
+  state.value.name+=32121
+  // state.count.value++
+}
 </script>
 
 <template>
-  <el-row :gutter="12">
+  <button @click="stateClick">555</button>
+  <span>{{state.name}}</span>
+  <el-row :gutter="12" mb-12px>
     <el-col :span="6">
       <el-card shadow="hover" >
-        <div class="card-header">
-          <span>
-            <i-basil:award-outline style="font-size: 40px;color: #5470c6;"/>
-          </span>
+        <div flex-justify-between grid-items-center flex>
+          <div i-basil:award-outline text-size-40px color-indigo-500></div>
           <div>
-            <p class="pb-12px">当天销售额</p>
-            <p><span>¥</span>2888</p>
+            <p pb-12px text-size-14px font-600 color-gray-500>当天销售额</p>
+            <p text-size-25px font-600 color-gray-600><span>¥</span>2888</p>
           </div>
         </div>
       </el-card>
     </el-col>
     <el-col :span="6">
       <el-card shadow="hover">
-        <div class="card-header">
-          <span>
-            <i-basil:award-outline style="font-size: 40px;color: #5470c6;"/>
-          </span>
+        <div flex-justify-between grid-items-center flex>
+          <div i-basil:award-outline text-size-40px color-indigo-500></div>
           <div>
-            <p class="pb-12px">当天销售额</p>
-            <p><span>¥</span>2888</p>
+            <p pb-12px text-size-14px font-600 color-gray-500>当天销售额</p>
+            <p text-size-25px font-600 color-gray-600><span>¥</span>2888</p>
           </div>
         </div>
       </el-card>
     </el-col>
     <el-col :span="6">
       <el-card shadow="hover">
-        <div class="card-header">
-          <span>
-            <i-basil:award-outline style="font-size: 40px;color: #5470c6;"/>
-          </span>
+        <div flex-justify-between grid-items-center flex>
+          <div i-basil:award-outline text-size-40px color-indigo-500></div>
           <div>
-            <p class="pb-12px">当天销售额</p>
-            <p><span>¥</span>2888</p>
+            <p pb-12px text-size-14px font-600 color-gray-500>当天销售额</p>
+            <p text-size-25px font-600 color-gray-600><span>¥</span>2888</p>
           </div>
         </div>
       </el-card>
     </el-col>
     <el-col :span="6">
       <el-card shadow="hover">
-        <div class="card-header">
-          <span>
-            <i-basil:award-outline style="font-size: 40px;color: #5470c6;"/>
-          </span>
+        <div flex-justify-between grid-items-center flex>
+          <div i-basil:award-outline text-size-40px color-indigo-500></div>
           <div>
-            <p class="pb-12px">当天销售额</p>
-            <p><span>¥</span>2888</p>
+            <p pb-12px text-size-14px font-600 color-gray-500>当天销售额</p>
+            <p text-size-25px font-600 color-gray-600><span>¥</span>2888</p>
           </div>
         </div>
       </el-card>
@@ -120,7 +124,7 @@ const EchartOne=()=>{
   </el-row>
   <el-row :gutter="12">
     <el-col :span="24">
-      <el-card shadow="never" id="Card1"/>
+      <el-card shadow="never" id="Card1" h-200px/>
     </el-col>
   </el-row>
 
@@ -131,23 +135,4 @@ const EchartOne=()=>{
 </template>
 
 <style scoped lang="scss">
-#Card1{
-  height: 200px;
-}
-.card-header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  >span{
-    color: #666;
-  }
-  p{
-    font-size: 20px;
-    font-weight: 600;
-    color: #6a6a6a;
-  }
-}
-.el-row{
-  margin-bottom: 12px;
-}
 </style>

@@ -22,6 +22,9 @@ const signOut=()=>{
       <i-carbon:logout/>
     </el-button>
     <LanguageButton />
+    <button icon-btn @click="toggleDark()">
+      <div i="carbon-sun dark:carbon-moon" />
+    </button>
   </div>
 </template>
 

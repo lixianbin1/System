@@ -392,6 +392,47 @@
   resolved "https://registry.npmjs.org/@types/web-bluetooth/-/web-bluetooth-0.0.16.tgz"
   integrity sha512-oh8q2Zc32S6gd/j50GowEjKLoOVOwHP/bWVjKJInBwQqdOYMdPrf1oVlelTlyfFK3CKxL1uahMDAr+vy8T7yMQ==
 
+"@unhead/dom@1.1.26", "@unhead/dom@^1.1.26":
+  version "1.1.26"
+  resolved "https://registry.npmjs.org/@unhead/dom/-/dom-1.1.26.tgz"
+  integrity sha512-6I8z170OAO19h/AslASN4Xw0hqItQFMKhRJQtplQs1BZ62LsDmNKuqJiYueX39U+IfIvIV3j/q1mQwt9lgMwTw==
+  dependencies:
+    "@unhead/schema" "1.1.26"
+    "@unhead/shared" "1.1.26"
+
+"@unhead/schema@1.1.26", "@unhead/schema@^1.1.26":
+  version "1.1.26"
+  resolved "https://registry.npmjs.org/@unhead/schema/-/schema-1.1.26.tgz"
+  integrity sha512-l93zaizm+pu36uMssdtzSC2Y61ncZaBBouZn0pB8rVI14V0hPxeXuSNIuPh2WjAm8wfb8EnCSE3LNguoqTar7g==
+  dependencies:
+    hookable "^5.5.3"
+    zhead "^2.0.4"
+
+"@unhead/shared@1.1.26":
+  version "1.1.26"
+  resolved "https://registry.npmjs.org/@unhead/shared/-/shared-1.1.26.tgz"
+  integrity sha512-gnUfNrl8w7hQHke9P0au7klcG9bHVOXqbDvya2uARA/8TyxNz87i0uakraO+P6/+zf484dw3b3MYkXq0thK2eg==
+  dependencies:
+    "@unhead/schema" "1.1.26"
+
+"@unhead/ssr@^1.1.26":
+  version "1.1.26"
+  resolved "https://registry.npmjs.org/@unhead/ssr/-/ssr-1.1.26.tgz"
+  integrity sha512-KYJDGgVNtU2i+NHu17o2zFXqsoLukOFEz81XrWQ8nQdY5+VNjy7IiTLp1dlx3umn1ohZjHySz4LXQCT4zUApSw==
+  dependencies:
+    "@unhead/schema" "1.1.26"
+    "@unhead/shared" "1.1.26"
+
+"@unhead/vue@^1.1.26":
+  version "1.1.26"
+  resolved "https://registry.npmjs.org/@unhead/vue/-/vue-1.1.26.tgz"
+  integrity sha512-UpxQ0KGmOoiN+Dg19zto5KTcnGV5chBmgiVJTDqUF4BPfr24vRrR65sZGdMoNV7weuD3AD/K0osk2ru+vXxRrA==
+  dependencies:
+    "@unhead/schema" "1.1.26"
+    "@unhead/shared" "1.1.26"
+    hookable "^5.5.3"
+    unhead "1.1.26"
+
 "@unocss/astro@0.51.5":
   version "0.51.5"
   resolved "https://registry.npmjs.org/@unocss/astro/-/astro-0.51.5.tgz"
@@ -432,6 +473,11 @@
   version "0.51.5"
   resolved "https://registry.npmjs.org/@unocss/core/-/core-0.51.5.tgz"
   integrity sha512-c2Ssp62nMRp3hCGhyaWYOMSD+QdwoYgTUbmIVNMTlVtDo9fjvyE2XwVRwAK7fJk8TnubAaDpkhZ49hVVf7Wjag==
+
+"@unocss/core@0.51.8":
+  version "0.51.8"
+  resolved "https://registry.npmjs.org/@unocss/core/-/core-0.51.8.tgz"
+  integrity sha512-myHRKBphEN3h0OnsUhg2JaFKjFGfqF/jmmzZCCMNU5UmxbheZomXANNLYXVgEP6LHvd4xAF0DEzrOBcDPLf0HQ==
 
 "@unocss/extractor-arbitrary-variants@0.51.5":
   version "0.51.5"
@@ -485,11 +531,11 @@
     "@unocss/extractor-arbitrary-variants" "0.51.5"
 
 "@unocss/preset-rem-to-px@^0.51.5":
-  version "0.51.5"
-  resolved "https://registry.yarnpkg.com/@unocss/preset-rem-to-px/-/preset-rem-to-px-0.51.5.tgz#b3fb7b75b918f48141c7168a0ff67e6d6c38afee"
-  integrity sha512-lnyNiGDxAjKaTKxY6RloWIU70TV0GXMb23w7vhg/K3nZ4OVc2oNuOT9/jlQKUR0nzAKUiWst7a/aMqxD0inTIg==
+  version "0.51.8"
+  resolved "https://registry.npmjs.org/@unocss/preset-rem-to-px/-/preset-rem-to-px-0.51.8.tgz"
+  integrity sha512-OIu22XghANPHrBhvAD1OKXr30ZXOukFMawBCNKBiB6pzsdFo/SfGkiDg579T9pEY8utsJaFOuflsykJDv/2MDw==
   dependencies:
-    "@unocss/core" "0.51.5"
+    "@unocss/core" "0.51.8"
 
 "@unocss/preset-tagify@0.51.5":
   version "0.51.5"
@@ -737,14 +783,14 @@
   resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.2.47.tgz"
   integrity sha512-BHGyyGN3Q97EZx0taMQ+OLNuZcW3d37ZEVmEAyeoA9ERdGvm9Irc/0Fua8SNyOtV1w6BS4q25wbMzJujO9HIfQ==
 
-"@vueuse/core@^10.0.2":
-  version "10.0.2"
-  resolved "https://registry.npmjs.org/@vueuse/core/-/core-10.0.2.tgz"
-  integrity sha512-/UGc2cXbxbeIFLDSJyHUjI9QZ4CJJkhiJe9TbKNPSofcWmYhhUgJ+7iw9njXTKu/Xc3Z6UeXVR9fosW1+cyrnQ==
+"@vueuse/core@^10.1.0":
+  version "10.1.0"
+  resolved "https://registry.npmjs.org/@vueuse/core/-/core-10.1.0.tgz"
+  integrity sha512-3Znoa5m5RO+z4/C9w6DRaKTR3wCVJvD5rav8HTDGsr+7rOZRHtcgFJ8NcCs0ZvIpmev2kExTa311ns5j2RbzDQ==
   dependencies:
     "@types/web-bluetooth" "^0.0.16"
-    "@vueuse/metadata" "10.0.2"
-    "@vueuse/shared" "10.0.2"
+    "@vueuse/metadata" "10.1.0"
+    "@vueuse/shared" "10.1.0"
     vue-demi ">=0.14.0"
 
 "@vueuse/core@^9.1.0":
@@ -757,20 +803,30 @@
     "@vueuse/shared" "9.13.0"
     vue-demi "*"
 
-"@vueuse/metadata@10.0.2":
-  version "10.0.2"
-  resolved "https://registry.npmjs.org/@vueuse/metadata/-/metadata-10.0.2.tgz"
-  integrity sha512-APSjlABrV+Q74c+FR0kFETvcN9W2pAaT3XF3WwqWUuk4srmVxv7DY4WshZxK2KYk1+MVY0Fus6J1Hk/JXVm6Aw==
+"@vueuse/head@^1.1.26":
+  version "1.1.26"
+  resolved "https://registry.npmjs.org/@vueuse/head/-/head-1.1.26.tgz"
+  integrity sha512-VUrqvcxKtxt2moKtUa7R/KscnDsNYj5u7HFULLsr84VhWsztzBedxW/8Wh/kTz2+/eMf5gC1KtkZBTFQYOmauQ==
+  dependencies:
+    "@unhead/dom" "^1.1.26"
+    "@unhead/schema" "^1.1.26"
+    "@unhead/ssr" "^1.1.26"
+    "@unhead/vue" "^1.1.26"
+
+"@vueuse/metadata@10.1.0":
+  version "10.1.0"
+  resolved "https://registry.npmjs.org/@vueuse/metadata/-/metadata-10.1.0.tgz"
+  integrity sha512-cM28HjDEw5FIrPE9rgSPFZvQ0ZYnOLAOr8hl1XM6tFl80U3WAR5ROdnAqiYybniwP5gt9MKKAJAqd/ab2aHkqg==
 
 "@vueuse/metadata@9.13.0":
   version "9.13.0"
   resolved "https://registry.npmjs.org/@vueuse/metadata/-/metadata-9.13.0.tgz"
   integrity sha512-gdU7TKNAUVlXXLbaF+ZCfte8BjRJQWPCa2J55+7/h+yDtzw3vOoGQDRXzI6pyKyo6bXFT5/QoPE4hAknExjRLQ==
 
-"@vueuse/shared@10.0.2":
-  version "10.0.2"
-  resolved "https://registry.npmjs.org/@vueuse/shared/-/shared-10.0.2.tgz"
-  integrity sha512-7W2l6qZaFvla3zAeEVo8hNHkNRKCezJa3JjZAKv3K4KsevXobHhVNr+RHaOVNK/6ETpFmtqiK+0pMIADbHjjag==
+"@vueuse/shared@10.1.0":
+  version "10.1.0"
+  resolved "https://registry.npmjs.org/@vueuse/shared/-/shared-10.1.0.tgz"
+  integrity sha512-2X52ogu12i9DkKOQ01yeb/BKg9UO87RNnpm5sXkQvyORlbq8ONS5l39MYkjkeVWWjdT0teJru7a2S41dmHmqjQ==
   dependencies:
     vue-demi ">=0.14.0"
 
@@ -1306,6 +1362,11 @@ he@^1.2.0:
   version "1.2.0"
   resolved "https://registry.npmjs.org/he/-/he-1.2.0.tgz"
   integrity sha512-F/1DnUGPopORZi0ni+CvrCgHQ5FyEAHRLSApuYWMmrbSwoN2Mn/7k+Gl38gJnR7yyDZk6WLXwiGod1JOWNDKGw==
+
+hookable@^5.5.3:
+  version "5.5.3"
+  resolved "https://registry.npmjs.org/hookable/-/hookable-5.5.3.tgz"
+  integrity sha512-Yc+BQe8SvoXH1643Qez1zqLRmbA5rCL+sSmk6TVos0LWVfNIB7PGncdlId77WzLGSIB5KaWgTaNTs2lNVEI6VQ==
 
 human-signals@^2.1.0:
   version "2.1.0"
@@ -2029,6 +2090,16 @@ unconfig@^0.3.7:
     defu "^6.1.0"
     jiti "^1.16.0"
 
+unhead@1.1.26:
+  version "1.1.26"
+  resolved "https://registry.npmjs.org/unhead/-/unhead-1.1.26.tgz"
+  integrity sha512-MshcPoPLXSGRgYtczddGvMgLUISTbt2pxihqD5kZVXKmY2FZLj1OQIY111aX45Xq47XJxjvYavvoyeUFroKQcg==
+  dependencies:
+    "@unhead/dom" "1.1.26"
+    "@unhead/schema" "1.1.26"
+    "@unhead/shared" "1.1.26"
+    hookable "^5.5.3"
+
 unimport@^3.0.6:
   version "3.0.6"
   resolved "https://registry.npmjs.org/unimport/-/unimport-3.0.6.tgz"
@@ -2287,6 +2358,11 @@ yocto-queue@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npmjs.org/yocto-queue/-/yocto-queue-0.1.0.tgz"
   integrity sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==
+
+zhead@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.npmjs.org/zhead/-/zhead-2.0.4.tgz"
+  integrity sha512-V4R94t3ifk9AURym6OskbKcnowzgp5Z88tkoL/NF67vyryNxC62u6mx5F1Ux4oh4+YN7FFmKYEyWy6m5kfPH6g==
 
 zrender@5.4.3:
   version "5.4.3"

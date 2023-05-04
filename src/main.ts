@@ -5,6 +5,7 @@ import '@/styles/theme.scss'
 import 'virtual:uno.css'
 import App from '@/App.vue'
 import i18 from '@/modules/i18n.ts'
+import { createPinia } from 'pinia'
 import { createRouter,createWebHistory } from 'vue-router'
 import { setupLayouts } from 'virtual:generated-layouts'
 import generatedRoutes from '~pages'
@@ -15,5 +16,6 @@ const router = createRouter({
 })
 createApp(App)
 .use(i18)
+.use(createPinia())
 .use(router)
 .mount('#app')

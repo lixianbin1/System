@@ -1,4 +1,4 @@
-# Vue 3 + TypeScript + Vite
+# System
 
 打算用来整合自己学的一些东西（方法或者API，组件或库）
 
@@ -28,11 +28,8 @@
 
 ### 自动化导入
 
-涉及的相关目录及文件
-
-```js
-|—— vite.config.ts
-```
+> npm i -D unplugin-auto-import
+> npm i -D unplugin-vue-components
 
 ```js
 // vite.config.js
@@ -71,6 +68,9 @@ export default defineConfig({
 ```
 
 ### 国际化翻译
+
+> npm i -D @intlify/unplugin-vue-i18n
+> npm i vue-i18n
 
 涉及的相关目录及文件
 
@@ -140,7 +140,11 @@ import i18 from '@/modules/i18n.ts'
 createApp(App).use(i18)
 ```
 
-### 自动化路由及模板
+### 自动化路由及布局
+
+> npm i -D vite-plugin-pages
+> npm i -D vite-plugin-vue-layouts
+> npm i vue-router
 
 涉及的相关目录及文件
 
@@ -193,7 +197,28 @@ const router = createRouter({
 createApp(App).use(router)
 ```
 
+### 自定义icon
+
+> npm install --save @iconify/json
+> npm install --save @iconify/vue
+
+``` js vite.config.ts
+// 通过UnoCss对图标进行配置
+import Icons from 'unplugin-icons/vite'
+import { presetIcons,presetAttributify } from 'unocss'
+
+export default {
+  plugins: [
+    Icons(),
+  ],
+}
+```
+
 ### 预定义样式
+
+说实话，有些功能花里胡哨，用处不大，我们是开发，不是会议记录者，不需要追求速度。只推荐搭配icon图标相关的CSS，其他的不推荐。
+
+> npm i -D unocss
 
 ```js
 |—— src/
@@ -218,19 +243,20 @@ export default defineConfig({
 // uno.config.ts
 import { 
   defineConfig,
-  presetUno, //默认预设
+  presetAttributify,
+  presetUno,
+  presetIcons,
 } from 'unocss'
 import presetRemToPx from '@unocss/preset-rem-to-px'
 export default defineConfig({
   presets: [
     presetUno(),  //默认预设
-    /*
-      .ma4 { margin: 1rem; }
-      .ml-3 { margin-left: 0.75rem; }
-      .ms-2 { margin-inline-start: 0.5rem; }
-      .mt-10px { margin-top: 10px; }
-    */
     presetRemToPx(), //将rem转为px
+    presetIcons({  //通过Class接入图标
+      scale: 1.2, //缩放1.2
+      warn: true, //匹配缺少的图标时发出警告
+    }),
+    presetAttributify(),  //将class 预设为属性
   ],
 })
 ```
@@ -240,16 +266,33 @@ export default defineConfig({
 import 'virtual:uno.css'
 ```
 
+### 组合式API工具类
+
+> npm i @vueuse/core
+> npm i @vueuse/head
+
+```js 
+// vite.config.js
+export default defineConfig({
+  plugins: [
+    AutoImport({
+      //...
+      imports: [
+        '@vueuse/core', //基于组合式API的集合工具
+        '@vueuse/head', //添加Meta的标签，更好的SEO
+      ],
+    })
+  ]
+})
+```
+
 ## 组件介绍
-
-
 
 ### src/components/组件介绍
 
- - `Menu` `MenuItem`
-
 `Menu` `MenuItem` 常见左侧菜单。使用了Element plus的menu做基础进行组件封装，加了一下需求改进
  
- - `Head`
-
 `Head` 常见的头部封装。
+
+## 功能介绍
+
