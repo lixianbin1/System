@@ -5,11 +5,9 @@
 ## 项目结构
 
 ```js
-|—— cypress/       //自动化测试库cypress文件
 |—— locales/       //国际语言翻译
 |—— src/
   |—— components/  //各类封装的组件
-  |—— composables/ //各类定义的函数
   |—— layouts/     //各类定义的模板
   |—— modules/     //部分模块的配置
   |—— pages/       //自动生成路由的文件
@@ -19,18 +17,8 @@
   |—— auto-imports.d.ts
   |—— components.d.ts
   |—— main.ts       //入口文件
-  |—— shims.d.ts    //为typescript做的适配定义文件
-  |—— types.ts      //ts的定义文件
-|—— test/           //测试文件
-|—— .editorconfig   //代码规范配置文件
-|—— .eslintrc       //ESlint配置文件
-|—— .gitignore      //Git忽略文件
-|—— cypress.config.ts//cypress测试库配置文件
+  |—— vite-env.d.ts
 |—— index.html
-|—— LICENSE         //许可协议
-|—— package.json
-|—— pnpm-lock.yaml
-|—— README.md
 |—— tsconfig.json   //typeScript的配置
 |—— uno.config.ts   //unocss的各项配置
 |—— vite.config.ts  //vite的各项配置
