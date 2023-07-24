@@ -21,9 +21,15 @@ export default defineConfig({
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
+      '@': `${path.resolve(__dirname, 'src')}/`,
     },
   },
-
+  build: {
+    // 添加打包配置，去除console和debugging
+    esbuild: {
+      drop: ['console', 'debugger'],
+    },
+  },
   plugins: [
     VueMacros({
       plugins: {
