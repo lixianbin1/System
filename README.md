@@ -4,7 +4,7 @@
 
 ## 项目结构
 
-```js
+```m
 |—— cypress/       //自动化测试库cypress文件
 |—— locales/       //国际语言翻译
 |—— src/
@@ -47,31 +47,32 @@
 // vite.config.js
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+
 export default defineConfig({
   plugins: [
-    //...
+    // ...
     AutoImport({
-      imports: [ //自动导入模块
+      imports: [ // 自动导入模块
         'vue',
         'vue-router',
         'vue-i18n',
       ],
-      dts: 'src/auto-imports.d.ts', //自动导入的文件集成
+      dts: 'src/auto-imports.d.ts', // 自动导入的文件集成
       dirs: [ // 自动导入目录下的模块并导出
         'src/composables',
         'src/stores',
       ],
-      vueTemplate: true, //在Vue模板内自动导入
-      resolvers: [ //自定义解析器，兼容第三方组件
+      vueTemplate: true, // 在Vue模板内自动导入
+      resolvers: [ // 自定义解析器，兼容第三方组件
 
       ],
-      //...
+      // ...
     }),
-    Components({ //自动引入各组件
+    Components({ // 自动引入各组件
       extensions: ['vue'],
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
-      resolvers: [ //自定义解析器，兼容第三方组件
+      resolvers: [ // 自定义解析器，兼容第三方组件
 
       ],
     }),
@@ -86,7 +87,7 @@ export default defineConfig({
 
 涉及的相关目录及文件
 
-```js
+```m
 |—— locales/
   |—— en.yml        //英文翻译文本
   |—— zh-CN.yml     //中文翻译文本
@@ -99,20 +100,21 @@ export default defineConfig({
 // vite.config.js
 import VueI18n from '@intlify/unplugin-vue-i18n/vite'
 import AutoImport from 'unplugin-auto-import/vite'
+
 export default defineConfig({
   plugins: [
-    //...
+    // ...
     AutoImport({
-      //...
-      imports: [ //自动导入模块
+      // ...
+      imports: [ // 自动导入模块
         'vue-i18n',
       ],
     }),
     VueI18n({
-      runtimeOnly: true, //在生产构建中自动使用 Vue-i18n
-      compositionOnly: true, //将 vue-i18n API 仅作组合 API
-      fullInstall: true, //安装VueI18n提供的全套 API、组件等
-      include: [path.resolve(__dirname, 'locales/**')], //设置翻译文件根目录
+      runtimeOnly: true, // 在生产构建中自动使用 Vue-i18n
+      compositionOnly: true, // 将 vue-i18n API 仅作组合 API
+      fullInstall: true, // 安装VueI18n提供的全套 API、组件等
+      include: [path.resolve(__dirname, 'locales/**')], // 设置翻译文件根目录
     }),
   ]
 })
@@ -125,14 +127,14 @@ import { type UserModule } from '~/types'
 
 const messages = Object.fromEntries(
   Object.entries(
-    import.meta.glob<{ default: any }>('../../locales/*.y(a)?ml', { eager: true }))
+    import.meta.glob < { default: any } > ('../../locales/*.y(a)?ml', { eager: true }))
     .map(([key, value]) => {
       const yaml = key.endsWith('.yaml')
       return [key.slice(14, yaml ? -5 : -4), value.default]
     }),
 )
 // 配置默认安装
-export const install: UserModule = ( app ) => {
+export const install: UserModule = (app) => {
   console.log(app)
   const i18n = createI18n({
     legacy: false,
@@ -160,7 +162,7 @@ createApp(App).use(i18)
 
 涉及的相关目录及文件
 
-```js
+```m
 |—— src/
   |—— layouts/
     |—— default.vue     //layouts的默认模板
@@ -173,20 +175,21 @@ createApp(App).use(i18)
 // vite.config.js
 import Layouts from 'vite-plugin-vue-layouts'
 import Pages from 'vite-plugin-pages'
+
 export default defineConfig({
   plugins: [
-    //...
+    // ...
     Layouts(),
     Pages({
-      extensions: ['vue'], //有效的文件后缀
+      extensions: ['vue'], // 有效的文件后缀
       // dirs: 'src/pages', //指定文件根目录
       extendRoute(route, parent) {
         return route
       },
     }),
     AutoImport({
-      //...
-      imports: [ //自动导入模块
+      // ...
+      imports: [ // 自动导入模块
         'vue',
         'vue-router',
         'vue-i18n',
@@ -198,13 +201,14 @@ export default defineConfig({
 
 ```js 
 // main.js
-import { createRouter,createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import { setupLayouts } from 'virtual:generated-layouts'
 import generatedRoutes from '~pages'
+
 const routes = setupLayouts(generatedRoutes)
 const router = createRouter({
-    history: createWebHistory(),
-    routes,
+  history: createWebHistory(),
+  routes,
 })
 createApp(App).use(router)
 ```
@@ -217,7 +221,7 @@ createApp(App).use(router)
 ``` js vite.config.ts
 // 通过UnoCss对图标进行配置
 import Icons from 'unplugin-icons/vite'
-import { presetIcons,presetAttributify } from 'unocss'
+import { presetAttributify, presetIcons } from 'unocss'
 
 export default {
   plugins: [
@@ -232,7 +236,7 @@ export default {
 
 > npm i -D unocss
 
-```js
+```m
 |—— src/
   |—— main.ts
   |—— pages/            //自动化路由的文件
@@ -243,9 +247,10 @@ export default {
 ```js 
 // vite.config.js
 import Unocss from 'unocss/vite'
+
 export default defineConfig({
   plugins: [
-    //...
+    // ...
     Unocss(),
   ]
 })
@@ -253,22 +258,23 @@ export default defineConfig({
 
 ```ts 
 // uno.config.ts
-import { 
+import {
   defineConfig,
   presetAttributify,
-  presetUno,
   presetIcons,
+  presetUno,
 } from 'unocss'
 import presetRemToPx from '@unocss/preset-rem-to-px'
+
 export default defineConfig({
   presets: [
-    presetUno(),  //默认预设
-    presetRemToPx(), //将rem转为px
-    presetIcons({  //通过Class接入图标
-      scale: 1.2, //缩放1.2
-      warn: true, //匹配缺少的图标时发出警告
+    presetUno(), // 默认预设
+    presetRemToPx(), // 将rem转为px
+    presetIcons({ // 通过Class接入图标
+      scale: 1.2, // 缩放1.2
+      warn: true, // 匹配缺少的图标时发出警告
     }),
-    presetAttributify(),  //将class 预设为属性
+    presetAttributify(), // 将class 预设为属性
   ],
 })
 ```
@@ -288,10 +294,10 @@ import 'virtual:uno.css'
 export default defineConfig({
   plugins: [
     AutoImport({
-      //...
+      // ...
       imports: [
-        '@vueuse/core', //基于组合式API的集合工具
-        '@vueuse/head', //添加Meta的标签，更好的SEO
+        '@vueuse/core', // 基于组合式API的集合工具
+        '@vueuse/head', // 添加Meta的标签，更好的SEO
       ],
     })
   ]
