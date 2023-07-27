@@ -59,6 +59,10 @@ export default defineConfig({
         'vue-i18n',
         '@vueuse/head',
         '@vueuse/core',
+        {
+          from: '@highlightjs/vue-plugin',
+          imports: ['hljsVuePlugin'],
+        },
       ],
       dts: 'src/auto-imports.d.ts',
       dirs: [
