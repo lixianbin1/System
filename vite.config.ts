@@ -18,6 +18,10 @@ import VueMacros from 'unplugin-vue-macros/vite'
 import WebfontDownload from 'vite-plugin-webfont-dl'
 
 export default defineConfig({
+  server: {
+    host: '0.0.0.0',
+    port: '3334',
+  },
   resolve: {
     alias: {
       '~/': `${path.resolve(__dirname, 'src')}/`,
@@ -39,15 +43,15 @@ export default defineConfig({
       },
     }),
 
-    // https://github.com/hannoeru/vite-plugin-pages
+    // vite-plugin-pages 文件路由
     Pages({
       extensions: ['vue', 'md'],
     }),
 
-    // https://github.com/JohnCampionJr/vite-plugin-vue-layouts
+    // vite-plugin-vue-layouts 路由布局模板
     Layouts(),
 
-    // https://github.com/antfu/unplugin-auto-import
+    // unplugin-auto-import 自动导入插件
     AutoImport({
       imports: [
         'vue',
@@ -65,28 +69,23 @@ export default defineConfig({
       resolvers: [ElementPlusResolver()],
     }),
 
-    // https://github.com/antfu/unplugin-vue-components
+    // unplugin-vue-components 自动导入组件
     Components({
-      // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
-      // allow auto import and register components used in markdown
       include: [/\.vue$/, /\.vue\?vue/, /\.md$/],
       dts: 'src/components.d.ts',
       resolvers: [ElementPlusResolver()],
     }),
 
-    // https://github.com/antfu/unocss
-    // see uno.config.ts for config
+    // /unocss 样式预设库
     Unocss(),
 
-    // https://github.com/antfu/vite-plugin-vue-markdown
-    // Don't need this? Try vitesse-lite: https://github.com/antfu/vitesse-lite
+    // vite-plugin-vue-markdown Vue的Markdown组件
     Markdown({
       wrapperClasses: 'prose prose-sm m-auto text-left',
       headEnabled: true,
       markdownItSetup(md) {
-        // https://prismjs.com/
-        md.use(Shiki, {
+        md.use(Shiki, { // 语法高亮
           theme: {
             light: 'vitesse-light',
             dark: 'vitesse-dark',
@@ -102,7 +101,7 @@ export default defineConfig({
       },
     }),
 
-    // https://github.com/antfu/vite-plugin-pwa
+    // vite-plugin-pwa PWA程序
     VitePWA({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg', 'safari-pinned-tab.svg'],
@@ -131,7 +130,7 @@ export default defineConfig({
       },
     }),
 
-    // https://github.com/intlify/bundle-tools/tree/main/packages/unplugin-vue-i18n
+    // unplugin-vue-i18n 国际化插件
     VueI18n({
       runtimeOnly: true,
       compositionOnly: true,
@@ -139,14 +138,14 @@ export default defineConfig({
       include: [path.resolve(__dirname, 'locales/**')],
     }),
 
-    // https://github.com/feat-agency/vite-plugin-webfont-dl
+    // vite-plugin-webfont-dl 网络字体
     WebfontDownload(),
 
-    // https://github.com/webfansplz/vite-plugin-vue-devtools
+    // vite-plugin-vue-devtools 开发插件
     VueDevTools(),
   ],
 
-  // https://github.com/vitest-dev/vitest
+  // vitest 单元测试
   test: {
     include: ['test/**/*.test.ts'],
     environment: 'jsdom',
@@ -155,7 +154,7 @@ export default defineConfig({
     },
   },
 
-  // https://github.com/antfu/vite-ssg
+  // vite-ssg ssg配置
   ssgOptions: {
     script: 'async',
     formatting: 'minify',
@@ -167,8 +166,8 @@ export default defineConfig({
     },
   },
 
+  // ssr 服务器渲染
   ssr: {
-    // TODO: workaround until they support native ESM
     noExternal: ['workbox-window', /vue-i18n/],
   },
 })
